@@ -43,7 +43,7 @@ public class MapsActivity extends AppCompatActivity
     private DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
 
     private int locationRequestCode = 1000;
-    private final int ONE_MINUTE = 1000*10;
+    private final int TEN_SECONDS = 1000*10;
 
 
     @Override
@@ -76,8 +76,8 @@ public class MapsActivity extends AppCompatActivity
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(ONE_MINUTE); // one minute interval
-        mLocationRequest.setFastestInterval(ONE_MINUTE);
+        mLocationRequest.setInterval(TEN_SECONDS); // one minute interval
+        mLocationRequest.setFastestInterval(TEN_SECONDS);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
